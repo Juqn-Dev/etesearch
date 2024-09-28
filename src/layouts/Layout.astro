@@ -1,3 +1,22 @@
 ---
-$END$
+import Header from "@/components/ui/Header.astro";
+import Background from "@/components/ui/Background.astro";
+import Footer from "@/components/ui/Footer.astro";
+const { title } = Astro.props;
 ---
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title} | EteSearch</title>
+    </head>
+    <body class="bg-black/80 text-white min-h-screen">
+        <Header />
+        <Background />
+        <slot />
+        <Footer />
+    </body>
+</html>
